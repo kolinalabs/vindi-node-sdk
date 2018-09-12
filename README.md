@@ -1,6 +1,6 @@
 # Vindi Node.js SDK
 
-[API Docs] (https://vindi.github.io/api-docs/dist) |
+[API Docs](https://vindi.github.io/api-docs/dist)
 
 ## Instalação
 
