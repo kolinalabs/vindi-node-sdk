@@ -1,5 +1,6 @@
 
 const BaseRequest = require('request')
+const fs = require('fs')
 
 class Client {
 
@@ -35,6 +36,8 @@ class Client {
         if (!options.hasOwnProperty('json')) {
             options.json = true
         }
+
+        options.cert = fs.readFileSync(`${__dirname}/ssl/ca-bundle.crt`)
 
         return new Promise((resolve, reject) => {
 
