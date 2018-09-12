@@ -1,6 +1,6 @@
 {
   "name": "vindi-node-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node.js SDK for vindi payment gateway",
   "author": "Claudinei Machado <claudinei@kolinalabs.com>",
   "main": "index.js",
