@@ -2,6 +2,8 @@
 const Filter = require('./filter')
 const resources = require('./resources')
 
+function V() {}
+
 const camelize = (str) => {
     return `${str.charAt(0).toUpperCase()}${str.slice(1)}`
 }
@@ -12,7 +14,13 @@ const hasResource = (resource) => {
 
 const handler = {
     get: function(target, property) {
+
+        if ('V' !== target.name) {
+            return
+        }
+
         const resource = camelize(property)
+
         if (hasResource(resource)) {
             return new resources[resource]
         }
@@ -23,6 +31,4 @@ const handler = {
     }
 }
 
-const vindi = new Proxy(new Function(), handler)
-
-module.exports = vindi
+module.exports = new Proxy(V, handler)
